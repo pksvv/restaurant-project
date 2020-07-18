@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList,faHome, faSearch,faPlusCircle,faUtensils} from '@fortawesome/free-solid-svg-icons';
+import { faList,faUser,faHome, faSearch,faPlusCircle,faUtensils} from '@fortawesome/free-solid-svg-icons';
 import { Navbar, Nav } from 'react-bootstrap';
 import Home from "./components/Home";
 import RestaurantCreate from "./components/RestaurantCreate";
@@ -16,6 +16,7 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import RestaurantList from "./components/RestaurantList";
 import RestaurantSearch from "./components/RestaurantSearch";
 import RestaurantUpdate from "./components/RestaurantUpdate";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Nav.Link href="#list"><Link to="/list"><FontAwesomeIcon icon={faList}/> List</Link></Nav.Link>
               {/*<Nav.Link href="#update"><Link to="/update"><FontAwesomeIcon icon={faPenSquare}/> Update</Link></Nav.Link>*/}
               <Nav.Link href="#search"><Link to="/search"><FontAwesomeIcon icon={faSearch}/> Search</Link></Nav.Link>
+              <Nav.Link href="#login"><Link to="/login"><FontAwesomeIcon icon={faUser}/> Login</Link></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -51,7 +53,14 @@ function App() {
           render={props => (
             <RestaurantUpdate {...props} />
           )}>
-        </Route>
+         </Route>
+       {/*  */}
+       <Route path="/login"
+          render={props => (
+            <Login {...props} />
+          )}>
+         </Route>        
+        {/*  */}
         <Route exact path="/">
           <Home />
         </Route>
