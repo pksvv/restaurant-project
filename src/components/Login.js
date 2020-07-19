@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavbarMenu from "./NavbarMenu";
 
 const url = "http://localhost:3000/login?q=";
 //http://localhost:3000/login?q=gaurvipul
@@ -18,6 +19,7 @@ class Login extends Component {
             data.json().then((resp)=>{
                 console.warn("resp >>>>",resp);
                 if (resp.length>0){
+                    localStorage.setItem('login',JSON.stringify(resp))
                     console.warn(this.props.history.push('list'))
 
                 }
@@ -31,6 +33,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <NavbarMenu />
                 <br/><br/>
                 <input type="text" name="username" placeholder="Enter UserName" onChange={(event)=>this.setState({username:event.target.value})}/> <br/><br/>
                 <input type="password" name="password" placeholder="Enter Password" onChange={(event)=>this.setState({password:event.target.value})}/> <br/><br/>

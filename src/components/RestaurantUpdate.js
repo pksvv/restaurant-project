@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavbarMenu from "./NavbarMenu";
 
 const url = "http://localhost:3000/restaurant/";
 
@@ -50,6 +51,7 @@ class RestaurantUpdate extends Component {
         console.warn("State >> ",this.state);
         return (
             <div>
+                <NavbarMenu />
                 <h1>Restaurant Update</h1>
                 <div>
                     <input onChange={(event) => { this.setState({ name: event.target.value }) }} placeholder="Restaurant Name" value={this.state.name}/><br /><br />

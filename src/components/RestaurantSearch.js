@@ -3,6 +3,7 @@ import { Table, Form, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit,faTrash } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
+import NavbarMenu from "./NavbarMenu";
 
 const url = "http://127.0.0.1:3000/restaurant?q=";
 const delurl = "http://127.0.0.1:3000/restaurant/";
@@ -53,6 +54,7 @@ class RestaurantSearch extends Component {
     render() {
         return (
             <Container>
+                <NavbarMenu />
                 <h1>Restaurant Search</h1>
                 {/*<input type="text" onChange={(event)=>this.search(event.target.value)}/>*/}
                 <Form.Control type="text" placeholder="Search Restaurant..." onChange={(event)=>this.search(event.target.value)}/>

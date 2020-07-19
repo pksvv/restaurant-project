@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavbarMenu from "./NavbarMenu";
 
 const url = "http://127.0.0.1:3000/restaurant";
 
@@ -32,6 +33,7 @@ class RestaurantCreate extends Component {
     render() {
         return (
             <div>
+                <NavbarMenu />
                 <h1>Restaurant Create</h1>
                 <div>
                     <input onChange={(event) => { this.setState({ id: event.target.value }) }} placeholder="Restaurant ID" /><br /><br />
